@@ -1,6 +1,6 @@
 ﻿namespace CriadorDeCaes.Models
 {
-    public class Criador
+    public class Criadores
     {
 
         public int ID { get; set; }    

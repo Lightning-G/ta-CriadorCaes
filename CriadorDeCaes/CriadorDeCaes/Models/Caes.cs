@@ -1,4 +1,6 @@
-﻿namespace CriadorDeCaes.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace CriadorDeCaes.Models
 {
     public class Caes
     {
@@ -13,8 +15,14 @@
 
         public DateTime datacompra { get; set;}
 
-        public string nregLOP { get; set;} 
+        public string nregLOP { get; set;}
 
+        /*Criaçao das chaves forasteiras*/
+
+
+        [ForeignKey(nameof(Criador))]
+        public int CriadorFK { get; set;}   
+        public Criadores Criador { get; set;} 
 
 
 
