@@ -5,6 +5,10 @@ namespace CriadorDeCaes.Models
     public class Caes
     {
 
+        public Caes() {
+            ListaFotografias=new HashSet<Fotografias>();
+        }
+
         public int ID { get; set; }
 
         public string Nome { get; set; }
@@ -22,9 +26,17 @@ namespace CriadorDeCaes.Models
 
         [ForeignKey(nameof(Criador))]
         public int CriadorFK { get; set;}   
-        public Criadores Criador { get; set;} 
+        public Criadores Criador { get; set;}
 
 
+
+        [ForeignKey(nameof(Raca))]
+        public int RacaFK { get; set;}
+
+        public Racas Raca { get; set;}
+
+
+        public ICollection<Fotografias> ListaFotografias { get; set;}
 
 
     }
